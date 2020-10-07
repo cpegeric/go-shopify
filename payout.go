@@ -30,7 +30,7 @@ type PayoutServiceOp struct {
 // A struct for all available payout list options.
 // See: https://help.shopify.com/api/reference/payout#index
 type PayoutListOptions struct {
-	SinceId 	  int64     `url:"since_id"`
+	SinceId 	  int64     `url:"since_id,omitempty"`
 	LastId            int64     `url:"last_id,omitempty"`
 	DateMin           string    `url:"date_min,omitempty"`
 	DateMax           string    `url:"date_max,omitempty"`
@@ -45,7 +45,7 @@ type Payout struct {
 	Date                  string           `json:"date,omitempty"`
 	Currency              string           `json:"currency,omitempty"`
 	Amount                *decimal.Decimal `json:"amount,omitempty"`
-	Summary               *Summary         `json:"summary"`
+	Summary               *Summary         `json:"summary,omitempty"`
 }
 
 type Summary struct {
